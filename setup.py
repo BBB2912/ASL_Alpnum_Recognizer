@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='ASL_Alpnum_Recognizer',
-    version='0.1',
+    version='0.2',
     packages=find_packages(),
     include_package_data=True,  # This will include any files listed in MANIFEST.in
     install_requires=[
