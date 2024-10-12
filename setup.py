@@ -20,7 +20,7 @@ setup(
     description='A package for recognizing American Sign Language using hand detection.',
     author='Mahedra Kumar Reddy Kakarla',
     author_email='mahendrakumarreddykakarla@gmail.com',
-    url='https://github.com/yourusername/yourrepository',  # Your project repository URL
+    url='https://github.com/BBB2912/ASL_Alpnum_Recognizer.git',  # Your project repository URL
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
