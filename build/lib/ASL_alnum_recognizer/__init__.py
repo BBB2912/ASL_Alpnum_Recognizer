@@ -1,3 +1,1 @@
-from recognize import SignLanguageRecognizer
-
-SignLanguageRecognizer.run_webcam()
+from .recognize import SignLanguageRecognizer

@@ -9,3 +9,4 @@ ASL_Alpnum_Recognizer.egg-info/requires.txt
 ASL_Alpnum_Recognizer.egg-info/top_level.txt
 ASL_alnum_recognizer/__init__.py
 ASL_alnum_recognizer/recognize.py
+ASL_alnum_recognizer/models/signLanguageDetectoralpnum.h5

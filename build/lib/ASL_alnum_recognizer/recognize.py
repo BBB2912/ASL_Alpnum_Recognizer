@@ -14,7 +14,7 @@ class SignLanguageRecognizer:
         if model_path is None:
             # Use pkg_resources to load the model from the package
             model_path = pkg_resources.resource_filename(
-                __name__, 'model/signLangRecognizeralpnum.h5')
+                __name__, 'models/signLanguageDetectoralpnum.h5')
 
         self.model = load_model(model_path)
 

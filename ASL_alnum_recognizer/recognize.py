@@ -7,6 +7,7 @@ import pkg_resources  # Use pkg_resources to access package data
 
 class SignLanguageRecognizer:
     def __init__(self, model_path=None,detection_confidence=0.7, tracking_confidence=0.5):
+        self.writingList=[]
         self.detector = HandDetector(maxHands=1,
                                      detectionCon=detection_confidence,
                                      minTrackCon=tracking_confidence)
@@ -14,7 +15,7 @@ class SignLanguageRecognizer:
         if model_path is None:
             # Use pkg_resources to load the model from the package
             model_path = pkg_resources.resource_filename(
-                __name__, 'model/signLangRecognizeralpnum.h5')
+                __name__, 'models/signLanguageDetectoralpnum.h5')
 
         self.model = load_model(model_path)
 
@@ -57,7 +58,7 @@ class SignLanguageRecognizer:
             35: 'Y',
             36: 'Z',
             37: 'del',
-            39: 'space'
+            39: ' '
         }
 
     def predict_from_image(self, image):

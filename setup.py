@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='ASL_Alpnum_Recognizer',
-    version='0.2',
+    version='0.6',
     packages=find_packages(),
     include_package_data=True,  # This will include any files listed in MANIFEST.in
     install_requires=[
@@ -11,6 +11,7 @@ setup(
         'opencv-python',
         'cvzone',
         'mediapipe',
+        'h5py',
     ],
     entry_points={
         'console_scripts': [
