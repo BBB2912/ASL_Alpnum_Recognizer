@@ -1,110 +1,83 @@
 **Sign Language ASL Alphanumeric Recognizer**
-=============================================
+============================================
 
-**A real-time hand gesture recognition system for American Sign Language (ASL) alphanumeric characters using deep learning and computer vision.**
+Welcome to the **ASL\_Alpha\_Recognizer** project! This repository provides a robust solution for recognizing American Sign Language (ASL) alphabetic and numeric signs. With two core scripts (recognizer.py and recognizer1.py), you can recognize individual ASL signs and even suggest full words based on gestures!
 
-markdownCopy code# Sign Language ASL Recognizer
+Features
+--------
 
-This project is an ASL (American Sign Language) Recognizer that utilizes computer vision techniques to recognize and classify hand gestures corresponding to different ASL signs.
-
-\## Table of Contents
-
-\- \[Installation\](#installation)
-
-\- \[Usage\](#usage)
-
-\- \[How It Works\](#how-it-works)
-
-\- \[Requirements\](#requirements)
-
-\- \[Known Issues\](#known-issues)
-
-\- \[Contributing\](#contributing)
-
-\- \[License\](#license)
-
-\## Installation
-
-1\. \*\*Clone the repository:\*\*
-
-\`\`\`bash
-
-git clone https://github.com/YourUsername/SignLangASL\_Recognizer.git
-
-cd SignLangASL\_Recognizer
-
-1.  Ensure you have Python installed. Install required dependencies by running:bashCopy codepip install -r requirements.txtIf you do not have a requirements.txt, here's an example of what it might contain:bashCopy codeopencv-pythonmediapipetensorflownumpy
+1.  **Alphabet and Numeric Recognition**:
     
-2.  bashCopy codepip install mediapipe
+    *   This project supports recognition of **all alphanumeric signs (A-Z, 0-9)**.
+        
+    *   The core recognizer script, recognizer.py, helps you identify individual signs with ease.
+        
+2.  **Word Suggestion Mode**:
     
-3.  After installing the dependencies, you can run the recognition script:bashCopy codepython recognize.py
+    *   The script recognizer1.py takes it a step further by integrating a word suggester.
+        
+    *   It utilizes an **NLTK-based word database with 23,000 words** to provide smart suggestions.
+        
+    *   Simply make the 'Z' sign to switch between **alphabet mode** and **word suggestion mode**.
+        
+
+Getting Started
+---------------
+
+### Prerequisites
+
+*   Python 3.x
+    
+*   bashCopy codepip install opencv-python tensorflow keras nltk
     
 
-Usage
------
+### Setup
 
-Once you run the script, it will open your webcam to detect hand gestures in real-time. The system will analyze the hand's landmarks and attempt to classify the gesture into a known ASL sign.
-
-### Key Features
-
-*   Real-time hand gesture detection using MediaPipe.
+1.  bashCopy codegit clone https://github.com/your\_username/ASL\_Alpha\_Recognizer.gitcd ASL\_Alpha\_Recognizer
     
-*   Gesture recognition with TensorFlow/Keras.
+2.  **Run the Recognition Script**:
     
-*   Option to classify gestures with maximum accuracy and minimal latency.
+    *   bashCopy codepython recognizer.py
+        
+3.  **Run the Word Suggestion Script**:
     
+    *   bashCopy codepython recognizer1.py
+        
 
-How It Works
-------------
+### Dataset
 
-The system leverages the following components:
+To train the model on alphanumeric ASL signs, refer to the publicly available dataset:Alphabets: [https://www.kaggle.com/datasets/grassknoted/asl-alphabet](https://www.kaggle.com/datasets/grassknoted/asl-alphabet)
 
-*   **MediaPipe Hand Detector**: Detects hands and extracts landmark coordinates.
+Numerics: [https://www.kaggle.com/datasets/lexset/synthetic-asl-numbers](https://www.kaggle.com/datasets/lexset/synthetic-asl-numbers)
+
+The dataset contains labeled images of all ASL alphabet signs, which are essential for recognizing gestures accurately.
+
+How to Use
+----------
+
+1.  **ASL Recognition (recognizer.py)**:
     
-*   **Custom Gesture Classifier**: Built using a deep learning model (TensorFlow/Keras) to classify hand gestures into different ASL signs.
+    *   Once the script is running, show any ASL sign (A-Z, 0-9) in front of the camera, and it will predict the letter or number.
+        
+2.  **ASL Word Suggestion Mode (recognizer1.py)**:
     
+    *   Show the **Z sign** to switch to word suggestion mode.
+        
+    *   In this mode, you can continue signing letters, and the system will suggest words based on the signed letters using a 23,000-word dataset.
+        
+    *   Use the suggestions to form complete words by choosing from the displayed options.
+        
 
-### Hand Detection
+Customization
+-------------
 
-MediaPipe’s HandDetector is used to detect and track the hand landmarks. These landmarks are passed to the classifier for gesture recognition.
-
-Requirements
-------------
-
-*   Python 3.7 or higher
+*   You can expand the word suggestion list or improve the gesture recognition accuracy by adding more data or retraining the model using the provided dataset.
     
-*   OpenCV
-    
-*   MediaPipe
-    
-*   TensorFlow
-    
-*   NumPy
-    
-
-Known Issues
-------------
-
-### Error: TypeError: HandDetector.\_\_init\_\_() got an unexpected keyword argument 'maxTrackCon'
-
-This error occurs if an incorrect version of MediaPipe or a modified version of the HandDetector class is used. Ensure that you're using the correct version of MediaPipe and refer to their official documentation for the correct arguments.
-
-To resolve this issue:
-
-*   bashCopy codepip show mediapipe
-    
-*   If the error persists, modify the recognize.py script and remove or correct the maxTrackCon argument in the HandDetector initialization.
-    
-
-For example:
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pythonCopy codeself.detector = HandDetector(maxHands=1)  # Remove 'maxTrackCon' if it's not supported   `
 
 Contributing
 ------------
 
-Feel free to fork the repository and submit pull requests if you wish to contribute to this project.
-
+Feel free to contribute to this project! Whether it's adding new features, improving recognition accuracy, or adding more robust datasets, you're welcome to submit pull requests.
 License
 -------
 
